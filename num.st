@@ -14,25 +14,25 @@ new: text
 !!
 
 !Num methodsFor: 'Messing with numbers'!
-numInc: t, x, d
-  x = '?' ifTrue: ^x
-  t := t + 1.
+numInc: t x: x d: d
+  (x = '?') ifTrue: [^x].
+  t n := t n + 1.
   d := x - mu.
   mu := mu + d / n.
   m2 := m2 + d * ( x - mu ).
-  x > hi ifTrue: hi := x.
-  x < lo ifTrue: lo := x.
-  n >= 2 ifTrue: sd = ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5.
-  ^x
-!
-numDec: t, x, d
-  x = '?' ifTrue: ^x
-  n = 1 ifTrue: ^x
+  (x > hi) ifTrue: [hi := x].
+  (x < lo) ifTrue: [lo := x].
+  (n >= 2) ifTrue: [sd := ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5].
+  ^x !
+
+numDec: t x: x d: d
+  (x = '?') ifTrue: [^x].
+  (n = 1) ifTrue: [^x].
   n := n - 1.
   d := x - mu.
   mu := mu - d / n.
   m2 := m2 - d * ( x * mu ).
-  n >= 2 ifTrue: sd = ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5.
+  (n >= 2) ifTrue: [sd := ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5].
   ^x
 !!
   
