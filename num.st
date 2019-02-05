@@ -14,9 +14,10 @@ new: text
 !!
 
 !Num methodsFor: 'Messing with numbers'!
-numInc: t x: x d: d
+numInc: x
+  | d |
   (x = '?') ifTrue: [^x].
-  t n := t n + 1.
+  n := n + 1.
   d := x - mu.
   mu := mu + d / n.
   m2 := m2 + d * ( x - mu ).
@@ -25,7 +26,8 @@ numInc: t x: x d: d
   (n >= 2) ifTrue: [sd := ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5].
   ^x !
 
-numDec: t x: x d: d
+numDec: x
+  | d | 
   (x = '?') ifTrue: [^x].
   (n = 1) ifTrue: [^x].
   n := n - 1.
@@ -33,8 +35,9 @@ numDec: t x: x d: d
   mu := mu - d / n.
   m2 := m2 - d * ( x * mu ).
   (n >= 2) ifTrue: [sd := ( m2 / ( n - 1 + 10 raisedTo: -32 ) ) raisedTo: 0.5].
-  ^x
-!!
+  ^x!
+
+!
   
   
   
