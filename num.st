@@ -38,9 +38,7 @@ numDec: x
   ^x!
 
 !
-  
-eject: aBlock [
-    aBlock value: element := aBlock value: element not.
-    ^(select: aBlock).
-]
-  
+!Collection methods!  
+eject: aBlock
+    ^(self select: aBlock not).
+!!
