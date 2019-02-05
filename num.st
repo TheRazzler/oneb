@@ -39,5 +39,8 @@ numDec: x
 
 !
   
-  
+eject: aBlock [
+    aBlock value: element := aBlock value: element not.
+    ^(select: aBlock).
+]
   
