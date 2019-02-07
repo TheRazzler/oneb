@@ -156,4 +156,10 @@ goodVisit
     "
     w visit:[:a| a oo] 
 !!
-
+"--------------STUDENT CODE--------------"
+! Collection methods !
+b4Now: aBlock
+  1 to (self size - 1) do: [
+    :x | aBlock value: (self at: x) value: (self at: (x + 1)).
+  ]
+!!
