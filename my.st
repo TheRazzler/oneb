@@ -160,4 +160,17 @@ goodVisit
 ! Collection methods !
 b4Now: aBlock
   1 to: (self size - 1) do: [ :x | aBlock value: (self at: x) value: (self at: (x + 1)). ].
+!
+visit: aBlock
+  self do: [:x | x visit: aBlock]
+!!
+
+! String methods !
+visit: aBlock
+  aBlock value: self.
+!!
+
+! Object methods !
+visit: aBlock
+  aBlock value: self.
 !!
